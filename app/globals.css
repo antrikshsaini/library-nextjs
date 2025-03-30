@@ -227,6 +227,12 @@
   --chart-5-h: 0;
   --chart-5-s: 100%;
   --chart-5-l: 50%;
+  --gradient-vertical-start: #12141d;
+  --gradient-vertical-end: #12151f;
+  --gradient-gray-start: #37363a;
+  --gradient-gray-end: #353637;
+  --gradient-blue-start: #232839;
+  --gradient-blue-end: #12141d;
 }
 
 .dark {
@@ -348,9 +354,9 @@
   }
 
   /* Borrowed Book */
-  /* .borrowed-book {
+  .borrowed-book {
     @apply gradient-vertical p-5 rounded-2xl xs:w-min w-full relative;
-  } */
+  }
 
   .borrowed-book_cover {
     @apply py-4 lg:px-16 px-10 flex justify-center items-center w-full rounded-lg;
@@ -519,31 +525,31 @@
   } */
 }
 
+@utility gradient-vertical {
+  background: linear-gradient(
+    180deg,
+    var(--gradient-vertical-start) 0%,
+    var(--gradient-vertical-end) 100%
+  );
+}
+
+@utility gradient-gray {
+  background: linear-gradient(
+    270deg,
+    var(--gradient-gray-start) 0%,
+    var(--gradient-gray-end) 100%
+  );
+}
+
+@utility gradient-blue {
+  background: linear-gradient(
+    180deg,
+    var(--gradient-blue-start) 0%,
+    var(--gradient-blue-end) 100%
+  );
+}
+
 @layer utilities {
-  .gradient-vertical {
-    background: linear-gradient(
-      180deg,
-      var(--gradient-vertical-start) 0%,
-      var(--gradient-vertical-end) 100%
-    );
-  }
-
-  .gradient-gray {
-    background: linear-gradient(
-      270deg,
-      var(--gradient-gray-start) 0%,
-      var(--gradient-gray-end) 100%
-    );
-  }
-
-  .gradient-blue {
-    background: linear-gradient(
-      180deg,
-      var(--gradient-blue-start) 0%,
-      var(--gradient-blue-end) 100%
-    );
-  }
-
   /* Auth */
   .auth-container {
     @apply relative flex flex-col-reverse text-light-100 sm:flex-row;
@@ -553,9 +559,9 @@
     @apply my-auto flex h-full min-h-screen flex-1 items-center bg-pattern bg-cover bg-top bg-dark-100 px-5 py-10;
   }
 
-  /* .auth-box {
+  .auth-box {
     @apply gradient-vertical mx-auto flex max-w-xl flex-col gap-6 rounded-lg p-10;
-  } */
+  }
 
   .auth-illustration {
     @apply sticky h-40 w-full sm:top-0 sm:h-screen sm:flex-1;
