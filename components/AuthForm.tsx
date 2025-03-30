@@ -28,6 +28,7 @@ import { FIELD_NAMES, FIELD_TYPES } from "@/constants";
 
 import { useRouter } from "next/navigation";
 import { Input } from "./ui/input";
+import ImageUpload from "./ImageUpload";
 
 interface Props<T extends FieldValues> {
   schema: ZodType<T>;
@@ -42,6 +43,8 @@ const AuthForm = <T extends FieldValues>({
   defaultValues,
   onSubmit,
 }: Props<T>) => {
+  const isSignIn = type === "SIGN_IN";
+
   const form: UseFormReturn<T> = useForm({
     resolver: zodResolver(schema),
     defaultValues: defaultValues as DefaultValues<T>,
@@ -50,28 +53,72 @@ const AuthForm = <T extends FieldValues>({
   const handleSubmit: SubmitHandler<T> = async (data) => {};
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormField
-          control={form.control}
-          name="username"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Username</FormLabel>
-              <FormControl>
-                <Input placeholder="shadcn" {...field} />
-              </FormControl>
-              <FormDescription>
-                This is your public display name.
-              </FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit">Submit</Button>
-      </form>
-    </Form>
+    <div className="flex flex-col gap-4">
+      <h1 className="text-2xl font-semibold text-white">
+        {isSignIn ? "Welcome back to BookWise" : "Create your library account"}
+      </h1>
+      <p className="text-light-100">
+        {isSignIn
+          ? "Access the vast collection of resources, and stay updated"
+          : "Please complete all fields and upload a valid university ID to gain access to the library"}
+      </p>
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(handleSubmit)}
+          className="w-full space-y-6"
+        >
+          {Object.keys(defaultValues).map((key) => {
+            const fieldName = key as Path<T>;
+            const fieldType = FIELD_TYPES[key as keyof typeof FIELD_TYPES];
+            const fieldLabel = FIELD_NAMES[key as keyof typeof FIELD_NAMES];
+
+            return (
+              <FormField
+                key={key}
+                control={form.control}
+                name={fieldName}
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{fieldLabel}</FormLabel>
+                    {field.name === "universityCard" ? (
+                      <ImageUpload></ImageUpload>
+                    ) : (
+                      <Input
+                        required
+                        type={fieldType}
+                        placeholder={fieldLabel}
+                        {...field}
+                        className="form-input"
+                      />
+                    )}
+
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            );
+          })}
+
+          <Button type="submit" className="form-btn">
+            {isSignIn ? "Sign In" : "Sign Up"}
+          </Button>
+        </form>
+      </Form>
+      <p className="text-center text-base font-medium">
+        {isSignIn ? "New to BookWise? " : "Already have an account? "}
+
+        <Link
+          href={isSignIn ? "/sign-up" : "/sign-in"}
+          className="font-bold text-primary"
+        >
+          {isSignIn ? "Create an account" : "Sign in"}
+        </Link>
+      </p>
+    </div>
   );
 };
 
 export default AuthForm;
+
+// Refer below for form creation
+// https://ui.shadcn.com/docs/components/form
