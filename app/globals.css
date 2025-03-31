@@ -428,7 +428,8 @@
 
   /* File Upload */
   .upload-btn {
-    @apply flex min-h-14 w-full items-center justify-center gap-1.5 rounded-md;
+    @apply flex  min-h-14 w-full items-center justify-center gap-1.5 rounded-md;
+    background-color: var(--dark-300) !important;
   }
 
   .upload-filename {

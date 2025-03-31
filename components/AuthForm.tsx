@@ -16,7 +16,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -80,18 +79,21 @@ const AuthForm = <T extends FieldValues>({
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>{fieldLabel}</FormLabel>
-                    {field.name === "universityCard" ? (
-                      <ImageUpload></ImageUpload>
-                    ) : (
-                      <Input
-                        required
-                        type={fieldType}
-                        placeholder={fieldLabel}
-                        {...field}
-                        className="form-input"
-                      />
-                    )}
-
+                    <FormControl>
+                      {field.name === "universityCard" ? (
+                        <ImageUpload
+                          onFileChange={field.onChange}
+                        ></ImageUpload>
+                      ) : (
+                        <Input
+                          required
+                          type={fieldType}
+                          placeholder={fieldLabel}
+                          {...field}
+                          className="form-input"
+                        />
+                      )}
+                    </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
