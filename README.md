@@ -42,7 +42,14 @@ https://orm.drizzle.team/docs/tutorials/drizzle-with-neon
 
 https://console.neon.tech/app/projects/flat-lab-63584683?branchId=br-hidden-meadow-a4xftyre&database=neondb
 
+drizzle ORM
 
 npx drizzle-kit generate
 
 npx drizzle-kit migrate
+
+https://authjs.dev/getting-started/installation
+
+npm install next-auth@beta bcryptjs
+
+npm i --save-dev @types/bcryptjs
