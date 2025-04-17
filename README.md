@@ -66,3 +66,8 @@ Rate limit
 https://github.com/upstash/ratelimit-js/tree/main/examples/nextjs-middleware
 
 to add on api routes
+
+Make workflows to get user back to vist website again
+Qstash
+
+https://upstash.com/docs/workflow/examples/customerOnboarding
