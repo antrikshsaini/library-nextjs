@@ -53,3 +53,16 @@ https://authjs.dev/getting-started/installation
 npm install next-auth@beta bcryptjs
 
 npm i --save-dev @types/bcryptjs
+
+RateLimiting
+
+create database,upstash
+
+https://upstash.com/docs/redis/sdks/ratelimit-ts/gettingstarted
+add in sign in and sign up, one ip address can only try to login only 5 times. to help brute force attack to not occur
+
+Rate limit
+
+https://github.com/upstash/ratelimit-js/tree/main/examples/nextjs-middleware
+
+to add on api routes
