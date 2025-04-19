@@ -87,3 +87,8 @@ allows you to schedule work to be executed after a response (or prerender) is fi
 
 Applied on home page when we check login already?
 
+Next, trigger workflow client to send email auto, when sign up
+https://upstash.com/docs/workflow/basics/client
+
+
+
