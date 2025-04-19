@@ -71,3 +71,19 @@ Make workflows to get user back to vist website again
 Qstash
 
 https://upstash.com/docs/workflow/examples/customerOnboarding
+
+
+Send Emails, usung Resend
+domain: hello.antrikshsaini.com
+
+add dns properties from Resend domain website
+https://resend.com/domains/
+
+Resend integration 
+https://upstash.com/docs/qstash/integrations/resend
+
+next after for sending emails logics, implement next after 
+allows you to schedule work to be executed after a response (or prerender) is finished. This is useful for tasks and other side effects that should not block the response, such as logging and analytics.
+
+Applied on home page when we check login already?
+
