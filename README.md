@@ -97,5 +97,9 @@ Create Admin Portal
 make book form, all books, add new books
 books page
 Add nee book form, create validation first schedma
-Caraete Book Form
+Create Book Form
+
+File Upload, for both Image and Video
+
+Color Picker, react-colorful
 
