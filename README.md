@@ -90,5 +90,14 @@ Applied on home page when we check login already?
 Next, trigger workflow client to send email auto, when sign up
 https://upstash.com/docs/workflow/basics/client
 
+It is a monolith project structure
 
+Create Admin Portal
+
+make book form, all books, add new books
+books page
+Add nee book form, create validation first schedma
+Caraete Book Form
+
+npx shadcn@latest add textarea
 
