@@ -99,5 +99,3 @@ books page
 Add nee book form, create validation first schedma
 Caraete Book Form
 
-npx shadcn@latest add textarea
-
