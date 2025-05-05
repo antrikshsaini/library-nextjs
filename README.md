@@ -103,3 +103,10 @@ File Upload, for both Image and Video
 
 Color Picker, react-colorful
 
+create new book action to save data in database
+create schema books
+
+
+Display from real database
+
+Fetch all books from database
