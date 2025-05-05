@@ -118,3 +118,6 @@ use seeds to populate data
 from dummybooks
 
 seed Data
+
+Book details page 
+(root)->books->[id]->page.tsx
