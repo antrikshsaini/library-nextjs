@@ -110,3 +110,11 @@ create schema books
 Display from real database
 
 Fetch all books from database
+
+Now add dummy data for books
+
+use seeds to populate data
+
+from dummybooks
+
+seed Data
