@@ -121,3 +121,22 @@ seed Data
 
 Book details page 
 (root)->books->[id]->page.tsx
+
+Borrow Functionality
+
+use dayjs library to manage days
+
+npm i dayjs
+
+create new table for borrow books,
+goto schemas
+
+then db:generate
+db:migrate
+
+Now create action for borrow book, update db
+
+For click Borrow button, will make it separate client side functionality, 
+better SEO
+
+changed Header to server side
